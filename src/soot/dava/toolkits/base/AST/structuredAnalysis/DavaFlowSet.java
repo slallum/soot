@@ -31,7 +31,7 @@
  *                  multiple places
  */
 
-package soot.dava.toolkits.base.ast.structuredAnalysis;
+package soot.dava.toolkits.base.AST.structuredAnalysis;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -44,7 +44,7 @@ import java.util.Map;
 import soot.dava.internal.AST.ASTNode;
 import soot.dava.internal.SET.SETNodeLabel;
 import soot.dava.internal.javaRep.DAbruptStmt;
-import soot.dava.toolkits.base.ast.traversals.ClosestAbruptTargetFinder;
+import soot.dava.toolkits.base.AST.traversals.ClosestAbruptTargetFinder;
 import soot.toolkits.scalar.AbstractFlowSet;
 import soot.toolkits.scalar.FlowSet;
 

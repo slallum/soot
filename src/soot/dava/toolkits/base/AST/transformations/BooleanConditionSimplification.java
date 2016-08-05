@@ -17,9 +17,9 @@
  * Boston, MA 02111-1307, USA.
  */
 
-package soot.dava.toolkits.base.ast.transformations;
+package soot.dava.toolkits.base.AST.transformations;
 
-import soot.dava.toolkits.base.ast.analysis.*;
+import soot.dava.toolkits.base.AST.analysis.*;
 import soot.dava.internal.javaRep.*;
 import soot.dava.internal.AST.*;
 import soot.*;

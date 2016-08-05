@@ -39,8 +39,8 @@ import soot.util.*;
 import soot.jimple.*;
 import soot.dava.internal.javaRep.*;
 import soot.dava.internal.asg.*;
-import soot.dava.toolkits.base.ast.*;
-import soot.dava.toolkits.base.ast.analysis.*;
+import soot.dava.toolkits.base.AST.*;
+import soot.dava.toolkits.base.AST.analysis.*;
 import soot.dava.toolkits.base.renamer.RemoveFullyQualifiedName;
 
 /*
@@ -471,7 +471,7 @@ public class ASTMethodNode extends ASTNode {
 	/*
 	 Nomair A. Naeem, 7-FEB-05
 	 Part of Visitor Design Implementation for AST
-	 See: soot.dava.toolkits.base.ast.analysis For details
+	 See: soot.dava.toolkits.base.AST.analysis For details
 	 */
 	public void apply(Analysis a) {
 		a.caseASTMethodNode(this);

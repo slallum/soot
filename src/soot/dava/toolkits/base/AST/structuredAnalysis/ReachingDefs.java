@@ -21,7 +21,7 @@
  * Maintained by: Nomair A. Naeem
  */
 
-package soot.dava.toolkits.base.ast.structuredAnalysis;
+package soot.dava.toolkits.base.AST.structuredAnalysis;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -37,7 +37,7 @@ import soot.dava.internal.AST.ASTUnaryBinaryCondition;
 import soot.dava.internal.AST.ASTUnconditionalLoopNode;
 import soot.dava.internal.AST.ASTWhileNode;
 //import soot.dava.internal.SET.*;
-import soot.dava.toolkits.base.ast.traversals.AllDefinitionsFinder;
+import soot.dava.toolkits.base.AST.traversals.AllDefinitionsFinder;
 import soot.jimple.DefinitionStmt;
 import soot.jimple.Stmt;
 

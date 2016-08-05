@@ -112,7 +112,7 @@
  *
  */
 
-package soot.dava.toolkits.base.ast.transformations;
+package soot.dava.toolkits.base.AST.transformations;
 
 import java.util.*;
 
@@ -124,8 +124,8 @@ import soot.grimp.internal.*;
 import soot.dava.internal.AST.*;
 import soot.dava.internal.asg.*;
 import soot.dava.internal.javaRep.*;
-import soot.dava.toolkits.base.ast.analysis.*;
-import soot.dava.toolkits.base.ast.traversals.*;
+import soot.dava.toolkits.base.AST.analysis.*;
+import soot.dava.toolkits.base.AST.traversals.*;
 
 public class SuperFirstStmtHandler extends DepthFirstAdapter {
 

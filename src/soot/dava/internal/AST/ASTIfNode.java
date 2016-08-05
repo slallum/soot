@@ -24,7 +24,7 @@ import soot.*;
 import java.util.*;
 import soot.jimple.*;
 import soot.dava.internal.SET.*;
-import soot.dava.toolkits.base.ast.analysis.*;
+import soot.dava.toolkits.base.AST.analysis.*;
 
 public class ASTIfNode extends ASTControlFlowNode
 {
@@ -138,7 +138,7 @@ public class ASTIfNode extends ASTControlFlowNode
     /*
       Nomair A. Naeem, 7-FEB-05
       Part of Visitor Design Implementation for AST
-      See: soot.dava.toolkits.base.ast.analysis For details
+      See: soot.dava.toolkits.base.AST.analysis For details
     */
     public void apply(Analysis a){
 	a.caseASTIfNode(this);

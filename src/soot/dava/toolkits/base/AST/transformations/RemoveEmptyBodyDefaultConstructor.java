@@ -1,4 +1,4 @@
-package soot.dava.toolkits.base.ast.transformations;
+package soot.dava.toolkits.base.AST.transformations;
 
 import java.util.ArrayList;
 import java.util.Iterator;

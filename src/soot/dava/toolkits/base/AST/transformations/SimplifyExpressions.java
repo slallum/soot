@@ -1,11 +1,11 @@
-package soot.dava.toolkits.base.ast.transformations;
+package soot.dava.toolkits.base.AST.transformations;
 
 import soot.Value;
 import soot.ValueBox;
 import soot.dava.internal.javaRep.DCmpExpr;
 import soot.dava.internal.javaRep.DCmpgExpr;
 import soot.dava.internal.javaRep.DCmplExpr;
-import soot.dava.toolkits.base.ast.analysis.DepthFirstAdapter;
+import soot.dava.toolkits.base.AST.analysis.DepthFirstAdapter;
 import soot.jimple.AddExpr;
 import soot.jimple.BinopExpr;
 import soot.jimple.DoubleConstant;

@@ -1,4 +1,4 @@
-package soot.dava.toolkits.base.ast.transformations;
+package soot.dava.toolkits.base.AST.transformations;
 
 import soot.ByteType;
 import soot.DoubleType;
@@ -12,7 +12,7 @@ import soot.Value;
 import soot.ValueBox;
 import soot.dava.internal.AST.ASTStatementSequenceNode;
 import soot.dava.internal.asg.AugmentedStmt;
-import soot.dava.toolkits.base.ast.analysis.DepthFirstAdapter;
+import soot.dava.toolkits.base.AST.analysis.DepthFirstAdapter;
 import soot.grimp.internal.GCastExpr;
 import soot.jimple.DefinitionStmt;
 import soot.jimple.Stmt;

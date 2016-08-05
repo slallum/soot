@@ -16,7 +16,7 @@
  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  * Boston, MA 02111-1307, USA.
  */
-package soot.dava.toolkits.base.ast.transformations;
+package soot.dava.toolkits.base.AST.transformations;
 
 import soot.BooleanType;
 import soot.Value;
@@ -34,7 +34,7 @@ import soot.dava.internal.AST.ASTUnaryCondition;
 import soot.dava.internal.AST.ASTWhileNode;
 import soot.dava.internal.javaRep.DIntConstant;
 import soot.dava.internal.javaRep.DNotExpr;
-import soot.dava.toolkits.base.ast.analysis.DepthFirstAdapter;
+import soot.dava.toolkits.base.AST.analysis.DepthFirstAdapter;
 import soot.jimple.ConditionExpr;
 import soot.jimple.DoubleConstant;
 import soot.jimple.FloatConstant;

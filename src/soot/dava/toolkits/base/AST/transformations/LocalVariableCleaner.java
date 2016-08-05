@@ -25,7 +25,7 @@
  * Change log: * November 23rd, 2005 Class Created
  */
 
-package soot.dava.toolkits.base.ast.transformations;
+package soot.dava.toolkits.base.AST.transformations;
 
 import soot.*;
 
@@ -38,9 +38,9 @@ import soot.dava.DavaBody;
 import soot.dava.DecompilationException;
 import soot.dava.internal.AST.*;
 import soot.dava.internal.asg.*;
-import soot.dava.toolkits.base.ast.analysis.*;
-//import soot.dava.toolkits.base.ast.structuredAnalysis.*;
-import soot.dava.toolkits.base.ast.traversals.*;
+import soot.dava.toolkits.base.AST.analysis.*;
+//import soot.dava.toolkits.base.AST.structuredAnalysis.*;
+import soot.dava.toolkits.base.AST.traversals.*;
 
 /**
  * The class is aimed to target cleaning up of unused local variables.

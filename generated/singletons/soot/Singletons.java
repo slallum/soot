@@ -260,12 +260,12 @@ public class Singletons {
         return instance_soot_jimple_toolkits_annotation_tags_ArrayNullTagAggregator;
     }
 
-    private soot.dava.toolkits.base.ast.ASTWalker instance_soot_dava_toolkits_base_AST_ASTWalker;
-    public soot.dava.toolkits.base.ast.ASTWalker soot_dava_toolkits_base_AST_ASTWalker() {
+    private soot.dava.toolkits.base.AST.ASTWalker instance_soot_dava_toolkits_base_AST_ASTWalker;
+    public soot.dava.toolkits.base.AST.ASTWalker soot_dava_toolkits_base_AST_ASTWalker() {
         if( instance_soot_dava_toolkits_base_AST_ASTWalker == null ) {
 	       	synchronized (this) {
 		        if( instance_soot_dava_toolkits_base_AST_ASTWalker == null )
-	        		instance_soot_dava_toolkits_base_AST_ASTWalker = new soot.dava.toolkits.base.ast.ASTWalker( g );
+	        		instance_soot_dava_toolkits_base_AST_ASTWalker = new soot.dava.toolkits.base.AST.ASTWalker( g );
 	       	}
        	}
         return instance_soot_dava_toolkits_base_AST_ASTWalker;
@@ -1063,12 +1063,12 @@ public class Singletons {
         return instance_soot_Timers;
     }
 
-    private soot.dava.toolkits.base.ast.TryContentsFinder instance_soot_dava_toolkits_base_AST_TryContentsFinder;
-    public soot.dava.toolkits.base.ast.TryContentsFinder soot_dava_toolkits_base_AST_TryContentsFinder() {
+    private soot.dava.toolkits.base.AST.TryContentsFinder instance_soot_dava_toolkits_base_AST_TryContentsFinder;
+    public soot.dava.toolkits.base.AST.TryContentsFinder soot_dava_toolkits_base_AST_TryContentsFinder() {
         if( instance_soot_dava_toolkits_base_AST_TryContentsFinder == null ) {
 	       	synchronized (this) {
 		        if( instance_soot_dava_toolkits_base_AST_TryContentsFinder == null )
-	        		instance_soot_dava_toolkits_base_AST_TryContentsFinder = new soot.dava.toolkits.base.ast.TryContentsFinder( g );
+	        		instance_soot_dava_toolkits_base_AST_TryContentsFinder = new soot.dava.toolkits.base.AST.TryContentsFinder( g );
 	       	}
        	}
         return instance_soot_dava_toolkits_base_AST_TryContentsFinder;
@@ -1151,12 +1151,12 @@ public class Singletons {
         return instance_soot_coffi_UnusuableType;
     }
 
-    private soot.dava.toolkits.base.ast.UselessTryRemover instance_soot_dava_toolkits_base_AST_UselessTryRemover;
-    public soot.dava.toolkits.base.ast.UselessTryRemover soot_dava_toolkits_base_AST_UselessTryRemover() {
+    private soot.dava.toolkits.base.AST.UselessTryRemover instance_soot_dava_toolkits_base_AST_UselessTryRemover;
+    public soot.dava.toolkits.base.AST.UselessTryRemover soot_dava_toolkits_base_AST_UselessTryRemover() {
         if( instance_soot_dava_toolkits_base_AST_UselessTryRemover == null ) {
 	       	synchronized (this) {
 		        if( instance_soot_dava_toolkits_base_AST_UselessTryRemover == null )
-	        		instance_soot_dava_toolkits_base_AST_UselessTryRemover = new soot.dava.toolkits.base.ast.UselessTryRemover( g );
+	        		instance_soot_dava_toolkits_base_AST_UselessTryRemover = new soot.dava.toolkits.base.AST.UselessTryRemover( g );
 	       	}
        	}
         return instance_soot_dava_toolkits_base_AST_UselessTryRemover;
@@ -1538,12 +1538,12 @@ public class Singletons {
         return instance_soot_javaToJimple_toolkits_CondTransformer;
     }
 
-    private soot.dava.toolkits.base.ast.transformations.UselessLabelFinder instance_soot_dava_toolkits_base_AST_transformations_UselessLabelFinder;
-    public soot.dava.toolkits.base.ast.transformations.UselessLabelFinder soot_dava_toolkits_base_AST_transformations_UselessLabelFinder() {
+    private soot.dava.toolkits.base.AST.transformations.UselessLabelFinder instance_soot_dava_toolkits_base_AST_transformations_UselessLabelFinder;
+    public soot.dava.toolkits.base.AST.transformations.UselessLabelFinder soot_dava_toolkits_base_AST_transformations_UselessLabelFinder() {
         if( instance_soot_dava_toolkits_base_AST_transformations_UselessLabelFinder == null ) {
 	       	synchronized (this) {
 		        if( instance_soot_dava_toolkits_base_AST_transformations_UselessLabelFinder == null )
-	        		instance_soot_dava_toolkits_base_AST_transformations_UselessLabelFinder = new soot.dava.toolkits.base.ast.transformations.UselessLabelFinder( g );
+	        		instance_soot_dava_toolkits_base_AST_transformations_UselessLabelFinder = new soot.dava.toolkits.base.AST.transformations.UselessLabelFinder( g );
 	       	}
        	}
         return instance_soot_dava_toolkits_base_AST_transformations_UselessLabelFinder;
@@ -1560,12 +1560,12 @@ public class Singletons {
         return instance_soot_dava_DavaStaticBlockCleaner;
     }
 
-    private soot.dava.toolkits.base.ast.traversals.ClosestAbruptTargetFinder instance_soot_dava_toolkits_base_AST_traversals_ClosestAbruptTargetFinder;
-    public soot.dava.toolkits.base.ast.traversals.ClosestAbruptTargetFinder soot_dava_toolkits_base_AST_traversals_ClosestAbruptTargetFinder() {
+    private soot.dava.toolkits.base.AST.traversals.ClosestAbruptTargetFinder instance_soot_dava_toolkits_base_AST_traversals_ClosestAbruptTargetFinder;
+    public soot.dava.toolkits.base.AST.traversals.ClosestAbruptTargetFinder soot_dava_toolkits_base_AST_traversals_ClosestAbruptTargetFinder() {
         if( instance_soot_dava_toolkits_base_AST_traversals_ClosestAbruptTargetFinder == null ) {
 	       	synchronized (this) {
 		        if( instance_soot_dava_toolkits_base_AST_traversals_ClosestAbruptTargetFinder == null )
-	        		instance_soot_dava_toolkits_base_AST_traversals_ClosestAbruptTargetFinder = new soot.dava.toolkits.base.ast.traversals.ClosestAbruptTargetFinder( g );
+	        		instance_soot_dava_toolkits_base_AST_traversals_ClosestAbruptTargetFinder = new soot.dava.toolkits.base.AST.traversals.ClosestAbruptTargetFinder( g );
 	       	}
        	}
         return instance_soot_dava_toolkits_base_AST_traversals_ClosestAbruptTargetFinder;

@@ -36,7 +36,7 @@
  *       stmt in the stmtSequenceBlock. Shouldnt that block be removed??
  */
 
-package soot.dava.toolkits.base.ast.traversals;
+package soot.dava.toolkits.base.AST.traversals;
 
 import soot.*;
 
@@ -45,8 +45,8 @@ import java.util.*;
 import soot.jimple.*;
 import soot.dava.internal.AST.*;
 import soot.dava.internal.asg.*;
-import soot.dava.toolkits.base.ast.analysis.*;
-import soot.dava.toolkits.base.ast.structuredAnalysis.*;
+import soot.dava.toolkits.base.AST.analysis.*;
+import soot.dava.toolkits.base.AST.structuredAnalysis.*;
 
 /*
  * TODO: shouldnt this be a transformation and hence under the transformation package???

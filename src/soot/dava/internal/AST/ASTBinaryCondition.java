@@ -22,7 +22,7 @@ package soot.dava.internal.AST;
 import soot.*;
 import soot.jimple.*;
 import soot.dava.toolkits.base.misc.*;
-import soot.dava.toolkits.base.ast.analysis.*;
+import soot.dava.toolkits.base.AST.analysis.*;
 
 public class ASTBinaryCondition extends ASTUnaryBinaryCondition{
     ConditionExpr condition;

@@ -1,4 +1,4 @@
-package soot.dava.toolkits.base.ast.structuredAnalysis;
+package soot.dava.toolkits.base.AST.structuredAnalysis;
 
 import soot.Local;
 import soot.PrimType;

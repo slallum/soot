@@ -29,11 +29,11 @@
  */
 
 
-package soot.dava.toolkits.base.ast.traversals;
+package soot.dava.toolkits.base.AST.traversals;
 
 import java.util.*;
 import soot.jimple.*;
-import soot.dava.toolkits.base.ast.analysis.*;
+import soot.dava.toolkits.base.AST.analysis.*;
 
 
 /*

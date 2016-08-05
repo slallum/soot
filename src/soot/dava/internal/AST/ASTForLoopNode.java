@@ -23,7 +23,7 @@ import java.util.*;
 import soot.*;
 import soot.dava.internal.SET.*;
 import soot.dava.internal.asg.*;
-import soot.dava.toolkits.base.ast.analysis.*;
+import soot.dava.toolkits.base.AST.analysis.*;
 
 /*
  Will contain the For loop Construct

@@ -21,7 +21,7 @@
   <class>soot.jimple.toolkits.annotation.arraycheck.ArrayBoundsChecker</class>
   <class>soot.jimple.spark.pag.ArrayElement</class>
   <class>soot.jimple.toolkits.annotation.tags.ArrayNullTagAggregator</class>
-  <class>soot.dava.toolkits.base.ast.ASTWalker</class>
+  <class>soot.dava.toolkits.base.AST.ASTWalker</class>
   <class>soot.baf.Baf</class>
   <class>soot.BooleanType</class>
   <class>soot.jimple.toolkits.scalar.pre.BusyCodeMotion</class>
@@ -94,7 +94,7 @@
   <class>soot.dava.toolkits.base.misc.ThrowFinder</class>
   <class>soot.dava.toolkits.base.misc.ThrowNullConverter</class>
   <class>soot.Timers</class>
-  <class>soot.dava.toolkits.base.ast.TryContentsFinder</class>
+  <class>soot.dava.toolkits.base.AST.TryContentsFinder</class>
   <class>soot.jimple.toolkits.typing.TypeAssigner</class>
   <class>soot.jimple.toolkits.scalar.UnconditionalBranchFolder</class>
   <class>soot.jimple.toolkits.scalar.ConstantCastEliminator</class>
@@ -102,7 +102,7 @@
   <class>soot.jimple.toolkits.scalar.UnreachableCodeEliminator</class>
   <class>soot.toolkits.scalar.UnusedLocalEliminator</class>
   <class>soot.coffi.UnusuableType</class>
-  <class>soot.dava.toolkits.base.ast.UselessTryRemover</class>
+  <class>soot.dava.toolkits.base.AST.UselessTryRemover</class>
   <class>soot.VoidType</class>
   <class>soot.baf.WordType</class>
   <class>soot.jimple.spark.fieldrw.FieldReadTagAggregator</class>
@@ -135,9 +135,9 @@
   <class>soot.jimple.toolkits.annotation.DominatorsTagger</class>
   <class>soot.jimple.toolkits.annotation.purity.PurityAnalysis</class>
   <class>soot.javaToJimple.toolkits.CondTransformer</class>
-  <class>soot.dava.toolkits.base.ast.transformations.UselessLabelFinder</class>
+  <class>soot.dava.toolkits.base.AST.transformations.UselessLabelFinder</class>
   <class>soot.dava.DavaStaticBlockCleaner</class>
-  <class>soot.dava.toolkits.base.ast.traversals.ClosestAbruptTargetFinder</class>
+  <class>soot.dava.toolkits.base.AST.traversals.ClosestAbruptTargetFinder</class>
   <class>soot.jimple.spark.sets.AllSharedListNodes</class>
   <class>soot.jimple.spark.sets.AllSharedHybridNodes</class>
   <class>soot.jimple.toolkits.thread.synchronization.LockAllocator</class>

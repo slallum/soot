@@ -18,7 +18,7 @@
  */
 
 
-package soot.dava.toolkits.base.ast.interProcedural;
+package soot.dava.toolkits.base.AST.interProcedural;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,7 +43,7 @@ import soot.dava.DavaBody;
 import soot.dava.DecompilationException;
 
 import soot.dava.internal.AST.ASTNode;
-import soot.dava.toolkits.base.ast.traversals.AllDefinitionsFinder;
+import soot.dava.toolkits.base.AST.traversals.AllDefinitionsFinder;
 import soot.jimple.DefinitionStmt;
 import soot.jimple.DoubleConstant;
 import soot.jimple.FieldRef;

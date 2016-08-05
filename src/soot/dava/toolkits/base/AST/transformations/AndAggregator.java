@@ -17,7 +17,7 @@
  * Boston, MA 02111-1307, USA.
  */
 
-package soot.dava.toolkits.base.ast.transformations;
+package soot.dava.toolkits.base.AST.transformations;
 
 import soot.*;
 import soot.jimple.*;
@@ -26,7 +26,7 @@ import soot.dava.internal.SET.*;
 import soot.dava.internal.AST.*;
 import soot.dava.internal.javaRep.*;
 import soot.dava.internal.asg.*;
-import soot.dava.toolkits.base.ast.analysis.*;
+import soot.dava.toolkits.base.AST.analysis.*;
 
 /*
  Nomair A. Naeem 18-FEB-2005

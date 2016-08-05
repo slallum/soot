@@ -27,7 +27,7 @@
  *                       to go into the DVariableDeclarationStmt and invoke applies on the defs or local
  *                       being declared in there. 
  */
-package soot.dava.toolkits.base.ast.analysis;
+package soot.dava.toolkits.base.AST.analysis;
 
 import soot.*;
 import soot.jimple.*;

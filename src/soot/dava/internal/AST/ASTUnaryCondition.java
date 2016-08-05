@@ -21,7 +21,7 @@ package soot.dava.internal.AST;
 
 import soot.*;
 import soot.dava.internal.javaRep.*;
-import soot.dava.toolkits.base.ast.analysis.*;
+import soot.dava.toolkits.base.AST.analysis.*;
 
 public class ASTUnaryCondition extends ASTUnaryBinaryCondition{
       Value value;

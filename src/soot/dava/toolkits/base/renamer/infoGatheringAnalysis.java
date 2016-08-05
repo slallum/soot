@@ -19,7 +19,7 @@
 
 package soot.dava.toolkits.base.renamer;
 
-import soot.dava.toolkits.base.ast.analysis.*;
+import soot.dava.toolkits.base.AST.analysis.*;
 import soot.*;
 import soot.jimple.*;
 import java.util.*;
@@ -209,7 +209,7 @@ public class infoGatheringAnalysis extends DepthFirstAdapter {
 
 	/*
 	 *  (non-Javadoc)
-	 * @see soot.dava.toolkits.base.ast.analysis.DepthFirstAdapter#outInvokeExpr(soot.jimple.InvokeExpr)
+	 * @see soot.dava.toolkits.base.AST.analysis.DepthFirstAdapter#outInvokeExpr(soot.jimple.InvokeExpr)
 	 * If it is a newInvoke expr we know that the name of the class can come in handy
 	 * while renaming because this could be a subtype
 	 */
