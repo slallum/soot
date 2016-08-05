@@ -25,8 +25,8 @@ import java.util.*;
 
 import soot.jimple.*;
 import soot.dava.internal.SET.*;
-import soot.dava.toolkits.base.AST.*;
-import soot.dava.toolkits.base.AST.analysis.*;
+import soot.dava.toolkits.base.ast.*;
+import soot.dava.toolkits.base.ast.analysis.*;
 
 public class ASTSwitchNode extends ASTLabeledNode
 {
@@ -216,7 +216,7 @@ public class ASTSwitchNode extends ASTLabeledNode
     /*
       Nomair A. Naeem, 7-FEB-05
       Part of Visitor Design Implementation for AST
-      See: soot.dava.toolkits.base.AST.analysis For details
+      See: soot.dava.toolkits.base.ast.analysis For details
     */
     public void apply(Analysis a){
 	a.caseASTSwitchNode(this);

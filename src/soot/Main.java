@@ -37,6 +37,7 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
+import soot.jimple.toolkits.annotation.moduli.ModuliTagger;
 import soot.options.CGOptions;
 import soot.options.Options;
 import soot.toolkits.astmetrics.ClassData;
@@ -143,7 +144,11 @@ public class Main {
 	 *   Entry point for cmd line invocation of soot.
 	 */
 	public static void main(String[] args) {
+		
 		try {
+//			PackManager.v().getPack("jap.parity").add(new
+//					Transform("jpt.myanalysistagger",
+//					ModuluTagger.v()));
 			Main.v().run(args);
 		} catch (OptionsParseException e) {
         		// error message has already been printed

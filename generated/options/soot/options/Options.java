@@ -1809,6 +1809,7 @@ public class Options extends OptionsBase {
         +padVal("jap.fieldrw", "Field read/write tagger")
         +padVal("jap.cgtagger", "Call graph tagger")
         +padVal("jap.parity", "Parity tagger")
+        +padVal("jap.moduli", "Moduli tagger")
         +padVal("jap.pat", "Colour-codes method parameters that may be aliased")
         +padVal("jap.lvtagger", "Creates color tags for live variables")
         +padVal("jap.rdtagger", "Creates link tags for reaching defs")
@@ -2665,6 +2666,12 @@ public class Options extends OptionsBase {
                 "\nThe Parity Tagger produces StringTags and ColorTags indicating \nthe parity of a variable (even, odd, top, or bottom). The \neclipse plugin can use tooltips and variable colouring to \ndisplay the information in these tags. For example, even \nvariables (such as x in x = 2) are coloured yellow. "
                 +"\n\nRecognized options (with default values):\n"
                 +padOpt( "enabled (false)", "" );
+        
+        if( phaseName.equals( "jap.moduli" ) )
+            return "Phase "+phaseName+":\n"+
+                "\nThe Moduli Tagger produces StringTags reporting \n a vector indicating the moduli of a variable up to a maximal base. The \neclipse plugin can use tooltips and variable colouring to \ndisplay the information in these tags. "
+                +"\n\nRecognized options (with default values):\n"
+                +padOpt( "enabled (false)", "" );
     
         if( phaseName.equals( "jap.pat" ) )
             return "Phase "+phaseName+":\n"+
@@ -3346,6 +3353,10 @@ public class Options extends OptionsBase {
             return ""
                 +"enabled ";
     
+        if( phaseName.equals( "jap.moduli" ) )
+            return ""
+                +"enabled ";
+        
         if( phaseName.equals( "jap.pat" ) )
             return ""
                 +"enabled ";
@@ -3960,6 +3971,10 @@ public class Options extends OptionsBase {
         if( phaseName.equals( "jap.parity" ) )
             return ""
               +"enabled:false ";
+        
+        if( phaseName.equals( "jap.moduli" ) )
+            return ""
+              +"enabled:false ";
     
         if( phaseName.equals( "jap.pat" ) )
             return ""
@@ -4175,6 +4190,7 @@ public class Options extends OptionsBase {
         if( phaseName.equals( "jap.fieldrw" ) ) return;
         if( phaseName.equals( "jap.cgtagger" ) ) return;
         if( phaseName.equals( "jap.parity" ) ) return;
+        if( phaseName.equals( "jap.moduli" ) ) return;
         if( phaseName.equals( "jap.pat" ) ) return;
         if( phaseName.equals( "jap.lvtagger" ) ) return;
         if( phaseName.equals( "jap.rdtagger" ) ) return;
@@ -4364,6 +4380,8 @@ public class Options extends OptionsBase {
             G.v().out.println( "Warning: Options exist for non-existent phase jap.cgtagger" );
         if( !PackManager.v().hasPhase( "jap.parity" ) )
             G.v().out.println( "Warning: Options exist for non-existent phase jap.parity" );
+        if( !PackManager.v().hasPhase( "jap.moduli" ) )
+            G.v().out.println( "Warning: Options exist for non-existent phase jap.moduli" );
         if( !PackManager.v().hasPhase( "jap.pat" ) )
             G.v().out.println( "Warning: Options exist for non-existent phase jap.pat" );
         if( !PackManager.v().hasPhase( "jap.lvtagger" ) )

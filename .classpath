@@ -21,5 +21,7 @@
 	<classpathentry kind="lib" path="libs/dexlib2-2.1.2-87d10dac.jar" sourcepath="D:/Arbeit/smali/dexlib2/src/main/java"/>
 	<classpathentry kind="lib" path="libs/util-2.1.2-87d10dac.jar" sourcepath="D:/Arbeit/smali/util/src/main/java"/>
 	<classpathentry kind="lib" path="libs/asm-debug-all-5.1.jar"/>
+	<classpathentry kind="lib" path="/jasmin/libs/java_cup.jar"/>
+	<classpathentry kind="lib" path="/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/jre/lib/rt.jar"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>

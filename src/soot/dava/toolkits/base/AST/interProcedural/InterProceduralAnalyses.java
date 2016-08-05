@@ -17,7 +17,7 @@
  * Boston, MA 02111-1307, USA.
  */
 
-package soot.dava.toolkits.base.AST.interProcedural;
+package soot.dava.toolkits.base.ast.interProcedural;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -30,14 +30,14 @@ import soot.SootMethod;
 import soot.dava.DavaBody;
 import soot.dava.internal.AST.ASTMethodNode;
 import soot.dava.internal.AST.ASTNode;
-import soot.dava.toolkits.base.AST.transformations.EliminateConditions;
-import soot.dava.toolkits.base.AST.transformations.SimplifyConditions;
-import soot.dava.toolkits.base.AST.transformations.CPApplication;
-import soot.dava.toolkits.base.AST.transformations.LocalVariableCleaner;
-import soot.dava.toolkits.base.AST.transformations.SimplifyExpressions;
-import soot.dava.toolkits.base.AST.transformations.UnreachableCodeEliminator;
-import soot.dava.toolkits.base.AST.transformations.UselessLabelFinder;
-import soot.dava.toolkits.base.AST.transformations.VoidReturnRemover;
+import soot.dava.toolkits.base.ast.transformations.EliminateConditions;
+import soot.dava.toolkits.base.ast.transformations.SimplifyConditions;
+import soot.dava.toolkits.base.ast.transformations.CPApplication;
+import soot.dava.toolkits.base.ast.transformations.LocalVariableCleaner;
+import soot.dava.toolkits.base.ast.transformations.SimplifyExpressions;
+import soot.dava.toolkits.base.ast.transformations.UnreachableCodeEliminator;
+import soot.dava.toolkits.base.ast.transformations.UselessLabelFinder;
+import soot.dava.toolkits.base.ast.transformations.VoidReturnRemover;
 import soot.dava.toolkits.base.renamer.Renamer;
 import soot.dava.toolkits.base.renamer.infoGatheringAnalysis;
 import soot.util.Chain;

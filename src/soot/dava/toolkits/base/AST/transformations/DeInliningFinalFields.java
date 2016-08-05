@@ -17,7 +17,7 @@
  * Boston, MA 02111-1307, USA.
  */
 
-package soot.dava.toolkits.base.AST.transformations;
+package soot.dava.toolkits.base.ast.transformations;
 
 import soot.*;
 import soot.dava.*;
@@ -29,9 +29,9 @@ import soot.jimple.*;
 import soot.dava.internal.AST.*;
 import soot.dava.internal.asg.*;
 import soot.dava.internal.javaRep.*;
-import soot.dava.toolkits.base.AST.analysis.*;
-//import soot.dava.toolkits.base.AST.traversals.*;
-//import soot.dava.toolkits.base.AST.structuredAnalysis.*;
+import soot.dava.toolkits.base.ast.analysis.*;
+//import soot.dava.toolkits.base.ast.traversals.*;
+//import soot.dava.toolkits.base.ast.structuredAnalysis.*;
 
 import java.util.*;
 

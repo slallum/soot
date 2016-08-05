@@ -51,9 +51,9 @@ import soot.dava.DavaBody;
 import soot.dava.DavaBuildFile;
 import soot.dava.DavaPrinter;
 import soot.dava.DavaStaticBlockCleaner;
-import soot.dava.toolkits.base.AST.interProcedural.InterProceduralAnalyses;
-import soot.dava.toolkits.base.AST.transformations.RemoveEmptyBodyDefaultConstructor;
-import soot.dava.toolkits.base.AST.transformations.VoidReturnRemover;
+import soot.dava.toolkits.base.ast.interProcedural.InterProceduralAnalyses;
+import soot.dava.toolkits.base.ast.transformations.RemoveEmptyBodyDefaultConstructor;
+import soot.dava.toolkits.base.ast.transformations.VoidReturnRemover;
 import soot.dava.toolkits.base.misc.PackageNamer;
 import soot.dava.toolkits.base.misc.ThrowFinder;
 import soot.grimp.Grimp;
@@ -75,6 +75,9 @@ import soot.jimple.toolkits.annotation.fields.UnreachableFieldsTagger;
 import soot.jimple.toolkits.annotation.liveness.LiveVarsTagger;
 import soot.jimple.toolkits.annotation.logic.LoopInvariantFinder;
 import soot.jimple.toolkits.annotation.methods.UnreachableMethodsTagger;
+import soot.jimple.toolkits.annotation.moduli.ModuliTagger;
+import soot.jimple.toolkits.annotation.moduli.PreciseModuliAnalysis.PreciseModuli;
+import soot.jimple.toolkits.annotation.moduli.PreciseModuliTagger;
 import soot.jimple.toolkits.annotation.nullcheck.NullCheckEliminator;
 import soot.jimple.toolkits.annotation.nullcheck.NullPointerChecker;
 import soot.jimple.toolkits.annotation.nullcheck.NullPointerColorer;
@@ -283,7 +286,10 @@ public class PackManager {
             p.add(new Transform("jap.lit", LoopInvariantFinder.v()));
             p.add(new Transform("jap.aet", AvailExprTagger.v()));
             p.add(new Transform("jap.dmt", DominatorsTagger.v()));
-
+//            p.add(new Transform("jap.parity", ModuliTagger.v()));
+            p.add(new Transform("jap.moduli", PreciseModuliTagger.v()));
+            
+//            p.add(new Transform("jap.modulu", ModuluTagger.v()));            
         }
 
         // CFG Viewer

@@ -264,6 +264,8 @@ Composite japjap_cgtaggerChild = japjap_cgtaggerCreate(getPageContainer());
 
 Composite japjap_parityChild = japjap_parityCreate(getPageContainer());
 
+Composite japjap_moduliChild = japjap_moduliCreate(getPageContainer());
+
 Composite japjap_patChild = japjap_patCreate(getPageContainer());
 
 Composite japjap_lvtaggerChild = japjap_lvtaggerCreate(getPageContainer());
@@ -1579,11 +1581,16 @@ Composite dbdb_force_recompileChild = dbdb_force_recompileCreate(getPageContaine
 		
 		makeNewEnableGroup("jap", "jap.parity");
 		
-		
 		addToEnableGroup("jap", "jap.parity", getjapjap_parityenabled_widget(), "enabled");
 		
 		getjapjap_parityenabled_widget().getButton().addSelectionListener(this);
 		
+		
+		makeNewEnableGroup("jap", "jap.moduli");
+		
+		addToEnableGroup("jap", "jap.moduli", getjapjap_parityenabled_widget(), "enabled");
+		
+		getjapjap_parityenabled_widget().getButton().addSelectionListener(this);
 		
 		makeNewEnableGroup("jap", "jap.pat");
 		
@@ -4919,6 +4926,23 @@ Composite dbdb_force_recompileChild = dbdb_force_recompileCreate(getPageContaine
 		if (boolRes != defBoolRes) {
 			getConfig().put(getjapjap_patenabled_widget().getAlias(), new Boolean(boolRes));
 		}
+		
+		
+
+		if (boolRes != defBoolRes) {
+			getConfig().put(getjapjap_modulienabled_widget().getAlias(), new Boolean(boolRes));
+		}
+		
+		boolRes = getjapjap_patenabled_widget().getButton().getSelection();
+		
+		
+		defBoolRes = false;
+		
+
+		if (boolRes != defBoolRes) {
+			getConfig().put(getjapjap_patenabled_widget().getAlias(), new Boolean(boolRes));
+		}
+		
 		
 		boolRes = getjapjap_lvtaggerenabled_widget().getButton().getSelection();
 		
@@ -9749,6 +9773,16 @@ Composite dbdb_force_recompileChild = dbdb_force_recompileCreate(getPageContaine
 	
 	public BooleanOptionWidget getjapjap_parityenabled_widget() {
 		return japjap_parityenabled_widget;
+	}	
+	
+	private BooleanOptionWidget japjap_modulienabled_widget;
+	
+	private void setjapjap_modulienabled_widget(BooleanOptionWidget widget) {
+		japjap_modulienabled_widget = widget;
+	}
+	
+	public BooleanOptionWidget getjapjap_modulienabled_widget() {
+		return japjap_modulienabled_widget;
 	}	
 	
 	private BooleanOptionWidget japjap_patenabled_widget;
@@ -18796,6 +18830,50 @@ Composite dbdb_force_recompileChild = dbdb_force_recompileCreate(getPageContaine
 
 		
 		return editGroupjapjap_parity;
+	}
+	
+	private Composite japjap_moduliCreate(Composite parent) {
+		String defKey;
+		String defaultString;
+		boolean defaultBool = false;
+	    String defaultArray;
+       
+		Group editGroupjapjap_moduli = new Group(parent, SWT.NONE);
+		GridLayout layout = new GridLayout();
+		editGroupjapjap_moduli.setLayout(layout);
+	
+		editGroupjapjap_moduli.setText("Moduli Tagger");
+	 	
+		editGroupjapjap_moduli.setData("id", "japjap_moduli");
+		
+		String descjapjap_moduli = "Moduli tagger";	
+		if (descjapjap_moduli.length() > 0) {
+			Label descLabeljapjap_moduli = new Label(editGroupjapjap_moduli, SWT.WRAP);
+			descLabeljapjap_moduli.setText(descjapjap_moduli);
+		}
+		OptionData [] data;	
+		
+		
+		
+		
+		defKey = "p"+" "+"jap.moduli"+" "+"enabled";
+		defKey = defKey.trim();
+
+		if (isInDefList(defKey)) {
+			defaultBool = getBoolDef(defKey);	
+		}
+		else {
+			
+			defaultBool = false;
+			
+		}
+
+		setjapjap_modulienabled_widget(new BooleanOptionWidget(editGroupjapjap_moduli, SWT.NONE, new OptionData("Enabled", "p", "jap.moduli","enabled", "\n", defaultBool)));
+		
+		
+
+		
+		return editGroupjapjap_moduli;
 	}
 
 

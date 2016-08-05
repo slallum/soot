@@ -86,8 +86,9 @@ public class ParityTagger extends BodyTransformer
 			while (valBoxIt.hasNext()){
 				ValueBox vb = (ValueBox)valBoxIt.next();
 				if (parityVarsUses.containsKey(vb.getValue())){
-					//G.v().out.println("Parity variable for: "+vb.getValue());
-					String type = (String)parityVarsUses.get(vb.getValue());
+					Object o = parityVarsUses.get(vb.getValue());
+					String type = o.toString();
+					G.v().out.println("Uses(" + vb.getJavaSourceStartColumnNumber()+ "): Parity variable for: "+vb.getValue() +"-" + type);
 					addColorTag(vb, type);
 				}
 			}
@@ -99,8 +100,9 @@ public class ParityTagger extends BodyTransformer
 			while (valBoxIt.hasNext()){
 				ValueBox vb = (ValueBox)valBoxIt.next();
 				if (parityVarsDefs.containsKey(vb.getValue())){
-					//G.v().out.println("Parity variable for: "+vb.getValue());
-					String type = (String)parityVarsDefs.get(vb.getValue());
+					Object o = parityVarsUses.get(vb.getValue());
+					String type = o.toString();
+					G.v().out.println("Defs(" + vb.getJavaSourceStartLineNumber() + "): Parity variable for: "+vb.getValue()+"-" + type);
 					addColorTag(vb, type);
 				}
 			}

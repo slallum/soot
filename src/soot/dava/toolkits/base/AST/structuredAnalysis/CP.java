@@ -1,4 +1,4 @@
-package soot.dava.toolkits.base.AST.structuredAnalysis;
+package soot.dava.toolkits.base.ast.structuredAnalysis;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -28,7 +28,7 @@ import soot.dava.internal.AST.ASTMethodNode;
 import soot.dava.internal.AST.ASTUnaryBinaryCondition;
 import soot.dava.internal.AST.ASTUnaryCondition;
 import soot.dava.internal.javaRep.DNotExpr;
-import soot.dava.toolkits.base.AST.interProcedural.ConstantFieldValueFinder;
+import soot.dava.toolkits.base.ast.interProcedural.ConstantFieldValueFinder;
 import soot.jimple.BinopExpr;
 import soot.jimple.ConditionExpr;
 import soot.jimple.DefinitionStmt;

@@ -5329,6 +5329,20 @@ information in these tags.  For example, even variables (such as
 						<default>false</default>
 					</boolopt>
 				</sub_phase>
+				<sub_phase>
+					<name>Parity Tagger</name>
+					<alias>jap.parity</alias>
+					<short_desc>Parity tagger</short_desc>
+					<long_desc>
+The Moduli Tagger produces StringTags indicating
+the moduli vector of a variable up to a maximal base. 
+</long_desc>
+					<boolopt>
+						<name>Enabled</name>
+						<alias>enabled</alias>
+						<default>false</default>
+					</boolopt>
+				</sub_phase>
                 <sub_phase>
 					<name>Parameter Alias Tagger</name>
 					<alias>jap.pat</alias>

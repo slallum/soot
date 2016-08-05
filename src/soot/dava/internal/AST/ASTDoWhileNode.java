@@ -24,7 +24,7 @@ import java.util.*;
 import soot.*;
 import soot.jimple.*;
 import soot.dava.internal.SET.*;
-import soot.dava.toolkits.base.AST.analysis.*;
+import soot.dava.toolkits.base.ast.analysis.*;
 
 public class ASTDoWhileNode extends ASTControlFlowNode
 {
@@ -120,7 +120,7 @@ public class ASTDoWhileNode extends ASTControlFlowNode
     /*
       Nomair A. Naeem, 7-FEB-05
       Part of Visitor Design Implementation for AST
-      See: soot.dava.toolkits.base.AST.analysis For details
+      See: soot.dava.toolkits.base.ast.analysis For details
     */
     public void apply(Analysis a){
 	a.caseASTDoWhileNode(this);

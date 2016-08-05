@@ -1,4 +1,4 @@
-package soot.dava.toolkits.base.AST.transformations;
+package soot.dava.toolkits.base.ast.transformations;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,8 +17,8 @@ import soot.dava.internal.javaRep.DArrayInitExpr;
 import soot.dava.internal.javaRep.DArrayInitValueBox;
 import soot.dava.internal.javaRep.DAssignStmt;
 import soot.dava.internal.javaRep.DShortcutAssignStmt;
-import soot.dava.toolkits.base.AST.analysis.DepthFirstAdapter;
-import soot.dava.toolkits.base.AST.traversals.InitializationDeclarationShortcut;
+import soot.dava.toolkits.base.ast.analysis.DepthFirstAdapter;
+import soot.dava.toolkits.base.ast.traversals.InitializationDeclarationShortcut;
 import soot.jimple.ArrayRef;
 import soot.jimple.DefinitionStmt;
 import soot.jimple.IntConstant;

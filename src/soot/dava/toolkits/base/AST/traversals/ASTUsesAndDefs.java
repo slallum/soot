@@ -28,7 +28,7 @@
  *              * Extensively tested this
  */
 
-package soot.dava.toolkits.base.AST.traversals;
+package soot.dava.toolkits.base.ast.traversals;
 
 import soot.*;
 
@@ -37,8 +37,8 @@ import java.util.*;
 import soot.jimple.*;
 import soot.dava.internal.asg.*;
 import soot.dava.internal.AST.*;
-import soot.dava.toolkits.base.AST.analysis.*;
-import soot.dava.toolkits.base.AST.structuredAnalysis.*;
+import soot.dava.toolkits.base.ast.analysis.*;
+import soot.dava.toolkits.base.ast.structuredAnalysis.*;
 
 /*
  THE ALGORITHM USES THE RESULTS OF REACHINGDEFS STRUCTURAL FLOW ANALYSIS

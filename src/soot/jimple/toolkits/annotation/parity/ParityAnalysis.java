@@ -42,11 +42,17 @@ import static soot.jimple.toolkits.annotation.parity.ParityAnalysis.Parity.*;
 //
 public class ParityAnalysis extends ForwardFlowAnalysis<Unit,Map<Value, ParityAnalysis.Parity>> {
 	public enum Parity {
-		TOP,
-		BOTTOM,
-		EVEN,
-		ODD;
+		TOP ("top"),
+		BOTTOM ("bottom"),
+		EVEN ("even"),
+		ODD ("odd");
 				
+		private final String name;       
+		
+		private Parity(String s) {
+			name = s;
+		}
+
 		static Parity valueOf (int v) {
 			return (v % 2) == 0 ? EVEN : ODD;
 		}
@@ -54,6 +60,16 @@ public class ParityAnalysis extends ForwardFlowAnalysis<Unit,Map<Value, ParityAn
 		static Parity valueOf (long v) {
 			return (v % 2) == 0 ? EVEN : ODD;
 		}
+		
+
+	    public boolean equalsName(String otherName) {
+	        return (otherName == null) ? false : name.equals(otherName);
+	    }
+	    
+	    @Override
+	    public String toString() {
+	       return this.name;
+	    }
 	}
 	
     private UnitGraph g;
@@ -189,6 +205,11 @@ public class ParityAnalysis extends ForwardFlowAnalysis<Unit,Map<Value, ParityAn
 	        
 	            return ODD;
         }
+        
+        // 7%		%49 %7	
+        // 8% 		4% 12% 
+        //
+        
         
         if (val instanceof MulExpr) {
         	Parity resVal1 = getParity(in, ((BinopExpr)val).getOp1());

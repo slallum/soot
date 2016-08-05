@@ -17,14 +17,14 @@
  * Boston, MA 02111-1307, USA.
  */
 
-package soot.dava.toolkits.base.AST.transformations;
+package soot.dava.toolkits.base.ast.transformations;
 
 import soot.Value;
 import soot.dava.internal.AST.ASTStatementSequenceNode;
 import soot.dava.internal.asg.AugmentedStmt;
 import soot.dava.internal.javaRep.DDecrementStmt;
 import soot.dava.internal.javaRep.DIncrementStmt;
-import soot.dava.toolkits.base.AST.analysis.DepthFirstAdapter;
+import soot.dava.toolkits.base.ast.analysis.DepthFirstAdapter;
 import soot.jimple.AddExpr;
 import soot.jimple.DefinitionStmt;
 import soot.jimple.IntConstant;

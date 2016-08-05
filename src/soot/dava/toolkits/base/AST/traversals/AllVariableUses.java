@@ -48,7 +48,7 @@
  e, CAN BE USED in a stmt    TICK
  */
 
-package soot.dava.toolkits.base.AST.traversals;
+package soot.dava.toolkits.base.ast.traversals;
 
 import soot.*;
 
@@ -57,7 +57,7 @@ import java.util.*;
 import soot.jimple.*;
 import soot.dava.internal.asg.*;
 import soot.dava.internal.AST.*;
-import soot.dava.toolkits.base.AST.analysis.*;
+import soot.dava.toolkits.base.ast.analysis.*;
 
 /*
  * Creates a mapping of locals and all places where they might be used

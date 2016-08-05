@@ -1,4 +1,4 @@
-package soot.dava.toolkits.base.AST.transformations;
+package soot.dava.toolkits.base.ast.transformations;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -20,10 +20,10 @@ import soot.dava.internal.AST.ASTSwitchNode;
 import soot.dava.internal.AST.ASTUnaryCondition;
 import soot.dava.internal.AST.ASTWhileNode;
 import soot.dava.internal.asg.AugmentedStmt;
-import soot.dava.toolkits.base.AST.analysis.DepthFirstAdapter;
-import soot.dava.toolkits.base.AST.structuredAnalysis.CP;
-import soot.dava.toolkits.base.AST.structuredAnalysis.CPFlowSet;
-import soot.dava.toolkits.base.AST.structuredAnalysis.CPHelper;
+import soot.dava.toolkits.base.ast.analysis.DepthFirstAdapter;
+import soot.dava.toolkits.base.ast.structuredAnalysis.CP;
+import soot.dava.toolkits.base.ast.structuredAnalysis.CPFlowSet;
+import soot.dava.toolkits.base.ast.structuredAnalysis.CPHelper;
 import soot.jimple.FieldRef;
 import soot.jimple.Stmt;
 

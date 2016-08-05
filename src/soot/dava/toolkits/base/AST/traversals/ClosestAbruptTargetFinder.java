@@ -25,7 +25,7 @@
  * CHANGLE LOG:
  * 
  */
-package soot.dava.toolkits.base.AST.traversals;
+package soot.dava.toolkits.base.ast.traversals;
 
 import soot.*;
 import java.util.*;
@@ -33,7 +33,7 @@ import soot.jimple.*;
 import soot.dava.internal.javaRep.*;
 import soot.dava.internal.AST.*;
 import soot.dava.internal.SET.*;
-import soot.dava.toolkits.base.AST.analysis.*;
+import soot.dava.toolkits.base.ast.analysis.*;
 
 
 /**

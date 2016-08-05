@@ -31,7 +31,7 @@ package soot.dava;
 import soot.SootField;
 import soot.SootMethod;
 import soot.Value;
-import soot.dava.toolkits.base.AST.analysis.DepthFirstAdapter;
+import soot.dava.toolkits.base.ast.analysis.DepthFirstAdapter;
 import soot.jimple.DefinitionStmt;
 import soot.jimple.FieldRef;
 

@@ -16,7 +16,7 @@
  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  * Boston, MA 02111-1307, USA.
  */
-package soot.dava.toolkits.base.AST.transformations;
+package soot.dava.toolkits.base.ast.transformations;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -26,7 +26,7 @@ import soot.Value;
 import soot.ValueBox;
 import soot.dava.internal.javaRep.DNewInvokeExpr;
 import soot.dava.internal.javaRep.DVirtualInvokeExpr;
-import soot.dava.toolkits.base.AST.analysis.DepthFirstAdapter;
+import soot.dava.toolkits.base.ast.analysis.DepthFirstAdapter;
 import soot.grimp.internal.GAddExpr;
 
 /*

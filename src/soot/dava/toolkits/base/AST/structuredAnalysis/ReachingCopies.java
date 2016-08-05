@@ -29,7 +29,7 @@
  *               Tested Extensively: found bug in implementation of process_doWhile in structuredAnalysis :)
  */
 
-package soot.dava.toolkits.base.AST.structuredAnalysis;
+package soot.dava.toolkits.base.ast.structuredAnalysis;
 
 import soot.*;
 import java.util.*;

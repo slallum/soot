@@ -22,8 +22,8 @@ package soot.dava.internal.AST;
 
 import soot.*;
 import java.util.*;
-import soot.dava.toolkits.base.AST.*;
-import soot.dava.toolkits.base.AST.analysis.*;
+import soot.dava.toolkits.base.ast.*;
+import soot.dava.toolkits.base.ast.analysis.*;
 
 public abstract class ASTNode extends AbstractUnit
 {
@@ -106,7 +106,7 @@ public abstract class ASTNode extends AbstractUnit
     /*
       Nomair A. Naeem, 7-FEB-05
       Part of Visitor Design Implementation for AST
-      See: soot.dava.toolkits.base.AST.analysis For details
+      See: soot.dava.toolkits.base.ast.analysis For details
     */
     public void apply(Analysis a){
     	throw new RuntimeException("Analysis invoked apply method on ASTNode");
