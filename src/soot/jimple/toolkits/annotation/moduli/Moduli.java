@@ -5,7 +5,7 @@ import soot.jimple.toolkits.annotation.moduli.ModuliAnalysis.VALUE_TYPE;
 public class Moduli {
 
 	private int base;   
-	private int value;   
+	private int value = 0;   
 	private VALUE_TYPE type;
 
 	

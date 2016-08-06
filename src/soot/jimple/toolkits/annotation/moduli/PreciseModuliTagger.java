@@ -22,7 +22,7 @@ public class PreciseModuliTagger extends BodyTransformer {
             Body b, String phaseName, Map options)
     {
 
-        System.out.println("modulu tagger for method: " ); //+ b.getMethod().getName()
+//        System.out.println("modulu tagger for method: " ); //+ b.getMethod().getName()
         boolean isInteractive = Options.v().interactive_mode();
         Options.v().set_interactive_mode(false);
         PreciseModuliAnalysis a;
@@ -42,7 +42,6 @@ public class PreciseModuliTagger extends BodyTransformer {
         while( sIt.hasNext() ) {
 
             Stmt s = (Stmt) sIt.next();
-
             HashMap moduliVars = (HashMap) a.getFlowAfter( s );
 
             Iterator it = moduliVars.keySet().iterator();
@@ -65,15 +64,17 @@ public class PreciseModuliTagger extends BodyTransformer {
 
 			
 			//uses
-			
+			System.out.println("analyzing line: " + s.getJavaSourceStartLineNumber());
 			Iterator valBoxIt = s.getUseBoxes().iterator();
 			
+			int size = 0;
 			while (valBoxIt.hasNext()){
+				size++;
 				ValueBox vb = (ValueBox)valBoxIt.next();
 				if (moduliVarsUses.containsKey(vb.getValue())){
 					Object o = moduliVarsUses.get(vb.getValue());
 					String type = o.toString();
-					G.v().out.println("Moduli variable for: " + vb.getValue() + "-" + type );
+					G.v().out.println(vb.getValue() + ": " + type );
 					addColorTag(vb, type);
 				}
 			}
@@ -87,7 +88,7 @@ public class PreciseModuliTagger extends BodyTransformer {
 				if (moduliVarsDefs.containsKey(vb.getValue())){
 					Object o =  moduliVarsDefs.get(vb.getValue());
 					String type = o.toString();
-					G.v().out.println("Moduli variable for: "+vb.getValue() + "-" + type );
+					G.v().out.println(vb.getValue() + ": " + type );
 					addColorTag(vb, type);
 				}
 			}

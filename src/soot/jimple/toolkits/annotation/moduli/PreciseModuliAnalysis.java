@@ -19,29 +19,39 @@
 
 package soot.jimple.toolkits.annotation.moduli;
 
-import soot.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-import java.util.*;
-
-import org.junit.experimental.max.MaxCore;
-
-import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
-
+import soot.IntegerType;
+import soot.Local;
+import soot.LongType;
+import soot.Type;
+import soot.Unit;
+import soot.Value;
+import soot.ValueBox;
 import soot.JastAddJ.MulExpr;
-import soot.jimple.*;
+import soot.jimple.AddExpr;
+import soot.jimple.ArithmeticConstant;
+import soot.jimple.BinopExpr;
+import soot.jimple.DefinitionStmt;
+import soot.jimple.IntConstant;
+import soot.jimple.LongConstant;
+import soot.jimple.SubExpr;
 import soot.jimple.internal.JMulExpr;
-import soot.toolkits.graph.*;
-import soot.toolkits.scalar.*;
-import soot.options.*;
 //import static soot.jimple.toolkits.annotation.parity.ModuliAnalysis.Parity.*;
+import soot.options.Options;
+import soot.toolkits.graph.UnitGraph;
+import soot.toolkits.scalar.ForwardFlowAnalysis;
+import soot.toolkits.scalar.LiveLocals;
 
 // STEP 1: What are we computing?
 // SETS OF PAIRS of form (X, T) => Use ArraySparseSet.
 //
 // STEP 2: Precisely define what we are computing.
-// For each statement compute the parity of all variables
+// For each statement compute the parity of all variables 
 // in the program.
-//
+// 
 // STEP 3: Decide whether it is a backwards or forwards analysis.
 // FORWARDS
 //
@@ -60,8 +70,7 @@ public class PreciseModuliAnalysis
 			}
 			for (int i = 2; i <= base; i++) {
 				if (type == ModuliAnalysis.VALUE_TYPE.BOTTOM) {
-					abstractValues.add(new Moduli(
-							ModuliAnalysis.VALUE_TYPE.BOTTOM, i));
+					abstractValues.add(new Moduli(ModuliAnalysis.VALUE_TYPE.BOTTOM, i));
 				} else {
 					abstractValues.add(new Moduli(
 							ModuliAnalysis.VALUE_TYPE.TOP, i));
@@ -112,12 +121,12 @@ public class PreciseModuliAnalysis
 				return false;
 			return String.valueOf(this.toString()).equals(otherName.toString());
 		}
-
+		
 		@Override
 		public int hashCode() {
 			return this.toString().hashCode();
 		}
-
+		
 	}
 
 	private UnitGraph g;
@@ -154,12 +163,6 @@ public class PreciseModuliAnalysis
 	private void buildBeforeFilterMap() {
 
 		for (Unit s : g.getBody().getUnits()) {
-			// if (!(s instanceof DefinitionStmt)) continue;
-			// Value left = ((DefinitionStmt)s).getLeftOp();
-			// if (!(left instanceof Local)) continue;
-
-			// if (!((left.getType() instanceof IntegerType) || (left.getType()
-			// instanceof LongType))) continue;
 
 			Map<Value, PreciseModuli> map = new HashMap<Value, PreciseModuli>();
 			for (Local l : filter.getLiveLocalsBefore(s)) {
@@ -172,19 +175,8 @@ public class PreciseModuliAnalysis
 		// System.out.println("init filtBeforeMap: "+filterUnitToBeforeFlow);
 	}
 
-	// STEP 4: Is the merge operator union or intersection?
-	//
-	// merge | bottom | even | odd | top
-	// -------+--------+--------+-------+--------
-	// bottom | bottom | even | odd | top
-	// -------+--------+--------+-------+--------
-	// even | even | even | top | top
-	// -------+--------+--------+-------+--------
-	// odd | odd | top | odd | top
-	// -------+--------+--------+-------+--------
-	// top | top | top | top | top
-	//
-
+	// STEP 4: Is the merge operator union
+	
 	@Override
 	protected void merge(Map<Value, PreciseModuli> inMap1,
 			Map<Value, PreciseModuli> inMap2, Map<Value, PreciseModuli> outMap) { // new
@@ -241,12 +233,12 @@ public class PreciseModuliAnalysis
 						|| t2 == (ModuliAnalysis.VALUE_TYPE.TOP)) {
 					abstractValues_res.add(new Moduli(
 							ModuliAnalysis.VALUE_TYPE.TOP, i+2));
-//					System.out.println(i_val_1 + "," + i_val_2 + ":" +
+//					System.out.println(i_val_1 + "," + i_val_2 + ":" + 
 							new Moduli(ModuliAnalysis.VALUE_TYPE.TOP, i+2).getType();
 					continue;
 				}
 
-				// If we have two numbers:
+				// Ensuring correct location of elements (i.e., order moduli bases as the Natural numbers) :
 				if (i_val_1.getBase() != (i + 2)
 						|| i_val_2.getBase() != (i + 2)) {
 					throw new IllegalStateException(
@@ -259,9 +251,8 @@ public class PreciseModuliAnalysis
 									+ "-" + t1 + " and "
 									+ t2);
 				}
-
-
-
+				
+				// If we have two numbers:
 				if (i_val_1.getValue() == i_val_2.getValue()
 						&& i_val_1.getBase() == i_val_2.getBase()) {
 					abstractValues_res.add(new Moduli(i_val_1.getValue(), i+2));
@@ -307,7 +298,7 @@ public class PreciseModuliAnalysis
 			ArrayList<Moduli> abstractValues_2 = resVal2.getValue();
 			ArrayList<Moduli> abstractValues_res = new ArrayList<Moduli>();
 
-
+			
 			if (abstractValues_1 == null || abstractValues_2 == null){
 				throw new IllegalStateException ("abstract values array is expected to be non null");
 			}
@@ -348,36 +339,6 @@ public class PreciseModuliAnalysis
 				abstractValues_res.add(new Moduli(res, base));
 
 			}
-			// a mod n = r <==>  b * a mod b * n = b * r
-			if (val instanceof MulExpr | val instanceof JMulExpr) {
-				for (int i = 0; i < abstractValues_res.size(); i++) {
-					Moduli i_val_1 = abstractValues_1.get(i);
-					Moduli i_val_2 = abstractValues_2.get(i);
-					ModuliAnalysis.VALUE_TYPE t1 = i_val_1.getType();
-					ModuliAnalysis.VALUE_TYPE t2 = i_val_2.getType();
-
-					if (t1.equals(ModuliAnalysis.VALUE_TYPE.NUMBER)
-							&& t2.equals(ModuliAnalysis.VALUE_TYPE.NUMBER)) {
-						// c = a * b -> c mod (a*i) = (a*b_mod_value)
-						int new_base = i_val_1.getValue() * i_val_2.getBase();
-						int res = i_val_1.getValue() * i_val_2.getValue();
-						System.out.println(new_base);
-						System.out.println(res);
-						if ((new_base - 2 > 0) && (new_base - 2 < abstractValues_res.size()) && (!abstractValues_res.get(new_base-2).getType().equals(ModuliAnalysis.VALUE_TYPE.NUMBER))) {
-							abstractValues_res.set(new_base-2, new Moduli(res, new_base));
-						}
-						// c = a * b -> c mod (b*i) = (b*a_mod_value)
-						new_base = i_val_2.getValue() * i_val_1.getBase();
-						res = i_val_2.getValue() * i_val_1.getValue();
-						System.out.println(new_base);
-						System.out.println(res);
-						System.out.println();
-						if ((new_base - 2 > 0) && (new_base - 2 < abstractValues_res.size()) && (!abstractValues_res.get(new_base-2).getType().equals(ModuliAnalysis.VALUE_TYPE.NUMBER))) {
-							abstractValues_res.set(new_base-2, new Moduli(res, new_base));
-						}
-					}
-				}
-			}
 			return new PreciseModuli(abstractValues_res);
 		}
 
@@ -392,10 +353,7 @@ public class PreciseModuliAnalysis
 
 		PreciseModuli p = in.get(val);
 		if (p == null)
-			return new PreciseModuli(ModuliAnalysis.VALUE_TYPE.TOP, main_base); // TODO
-																				// is
-																				// this
-																				// right?
+			return new PreciseModuli(ModuliAnalysis.VALUE_TYPE.TOP, main_base); 
 		return p;
 	}
 
@@ -406,13 +364,14 @@ public class PreciseModuliAnalysis
 		// copy in to out
 		out.putAll(in);
 
-		// for each stmt where leftOp is defintionStmt find the parity
-		// of rightOp and update parity to EVEN, ODD or TOP
+		// for each stmt where leftOp is defintionStmt find the moduli
+		// of rightOp and update accordingly 
 
 		// boolean useS = false;
 
 		if (s instanceof DefinitionStmt) {
 			Value left = ((DefinitionStmt) s).getLeftOp();
+			
 			if (left instanceof Local) {
 				if ((left.getType() instanceof IntegerType)
 						|| (left.getType() instanceof LongType)) {
@@ -424,7 +383,7 @@ public class PreciseModuliAnalysis
 		}
 
 		// get all use and def boxes of s
-		// if use or def is int or long constant add their parity
+		// if use or def is int or long constant add their moduli
 		for (ValueBox next : s.getUseAndDefBoxes()) {
 			Value val = next.getValue();
 			// System.out.println("val: "+val.getClass());
@@ -461,7 +420,7 @@ public class PreciseModuliAnalysis
 	protected Map<Value, PreciseModuli> entryInitialFlow() {
 		/*
 		 * HashMap initMap = new HashMap();
-		 *
+		 * 
 		 * Chain locals = g.getBody().getLocals(); Iterator it =
 		 * locals.iterator(); while (it.hasNext()) { initMap.put(it.next(),
 		 * BOTTOM); } return initMap;
@@ -530,9 +489,9 @@ public class PreciseModuliAnalysis
 		return initMap;
 
 	}
-
+	
 	void assertTrue (boolean b, String msg){
-		if (b) return;
+		if (b) return; 
 		System.err.println("Unexpected states: " + msg);
 		System.exit(0);
 	}

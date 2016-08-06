@@ -286,10 +286,8 @@ public class PackManager {
             p.add(new Transform("jap.lit", LoopInvariantFinder.v()));
             p.add(new Transform("jap.aet", AvailExprTagger.v()));
             p.add(new Transform("jap.dmt", DominatorsTagger.v()));
-//            p.add(new Transform("jap.parity", ModuliTagger.v()));
             p.add(new Transform("jap.moduli", PreciseModuliTagger.v()));
-
-//            p.add(new Transform("jap.modulu", ModuluTagger.v()));
+//            p.add(new Transform("jap.modulu", ModuluTagger.v()));            
         }
 
         // CFG Viewer
@@ -435,7 +433,7 @@ public class PackManager {
                 	if (source != null)
                 		source.close();
                 }
-
+                
             	// Create tags from all values we only have in code assingments now
                 for (SootClass sc : Scene.v().getApplicationClasses()) {
                     if( Options.v().validate() )
@@ -443,7 +441,7 @@ public class PackManager {
                 	if (!sc.isPhantom)
                 		ConstantInitializerToTagTransformer.v().transformClass(sc, true);
                 }
-
+                
 				runBodyPacks(clazz);
 				//generate output
 				writeClass(clazz);
@@ -468,12 +466,12 @@ public class PackManager {
             LineNumberAdder lineNumAdder = LineNumberAdder.v();
             lineNumAdder.internalTransform("", null);
         }
-
+		
         if (Options.v().whole_program() || Options.v().whole_shimple()) {
             runWholeProgramPacks();
         }
         retrieveAllBodies();
-
+        
     	// Create tags from all values we only have in code assignments now
         for (SootClass sc : Scene.v().getApplicationClasses()) {
             if( Options.v().validate() )
@@ -481,7 +479,7 @@ public class PackManager {
         	if (!sc.isPhantom)
         		ConstantInitializerToTagTransformer.v().transformClass(sc, true);
         }
-
+        
         // if running coffi cfg metrics, print out results and exit
         if (soot.jbco.Main.metrics) {
           coffiMetrics();
@@ -569,7 +567,7 @@ public class PackManager {
             jarFile = null;
         }
     }
-
+	
     private void runWholeProgramPacks() {
         if (Options.v().whole_shimple()) {
             ShimpleTransformer.v().transform();
@@ -627,19 +625,19 @@ public class PackManager {
         CountingThreadPoolExecutor executor =  new CountingThreadPoolExecutor(threadNum,
         		threadNum, 30, TimeUnit.SECONDS,
         		new LinkedBlockingQueue<Runnable>());
-
+    	
     	while( classes.hasNext() ) {
     		final SootClass c = classes.next();
            	executor.execute(new Runnable() {
-
+				
 				@Override
 				public void run() {
 					runBodyPacks(c);
 				}
-
+				
            	});
         }
-
+    	
         // Wait till all packs have been executed
         try {
         	executor.awaitCompletion();
@@ -649,7 +647,7 @@ public class PackManager {
 			throw new RuntimeException("Could not wait for pack threads to "
 					+ "finish: " + e.getMessage(), e);
 		}
-
+        
         // If something went wrong, we tell the world
         if (executor.getException() != null)
         	throw (RuntimeException) executor.getException();
@@ -669,19 +667,19 @@ public class PackManager {
         CountingThreadPoolExecutor executor =  new CountingThreadPoolExecutor(threadNum,
         		threadNum, 30, TimeUnit.SECONDS,
         		new LinkedBlockingQueue<Runnable>());
-
+    	
         while( classes.hasNext() ) {
         	final SootClass c = classes.next();
            	executor.execute(new Runnable() {
-
+				
 				@Override
 				public void run() {
 					writeClass( c );
 				}
-
+				
            	});
         }
-
+        
         // Wait till all classes have been written
         try {
         	executor.awaitCompletion();
@@ -691,7 +689,7 @@ public class PackManager {
 			throw new RuntimeException("Could not wait for writer threads to "
 					+ "finish: " + e.getMessage(), e);
 		}
-
+        
         // If something went wrong, we tell the world
         if (executor.getException() != null)
         	throw (RuntimeException) executor.getException();
@@ -882,7 +880,7 @@ public class PackManager {
         	}
         }
     }
-
+    
     @SuppressWarnings("fallthrough")
     private void runBodyPacks(SootClass c) {
         final int format = Options.v().output_format();
@@ -981,6 +979,7 @@ public class PackManager {
 
             if (produceJimple) {
                 Body body = m.retrieveActiveBody();
+                System.out.println("*****  Analyzing method: "  + body.getClass() + ":" + body.getMethod() + "  *****");
                 //Change
                 CopyPropagator.v().transform(body);
                 ConditionalBranchFolder.v().transform(body);
@@ -1063,7 +1062,7 @@ public class PackManager {
         if (Options.v().output_format() == Options.output_format_jimple)
         	if (!c.isPhantom)
         		ConstantValueToInitializerTransformer.v().transformClass(c);
-
+        
         final int format = Options.v().output_format();
         if( format == Options.output_format_none ) return;
         if( format == Options.output_format_dava ) return;
@@ -1109,9 +1108,9 @@ public class PackManager {
         if (Options.v().xml_attributes()) {
             Printer.v().setOption(Printer.ADD_JIMPLE_LN);
         }
-
+        
         int java_version = Options.v().java_version();
-
+        
         switch (format) {
             case Options.output_format_class :
             	if(Options.v().asm_backend()){
@@ -1217,7 +1216,7 @@ public class PackManager {
         CountingThreadPoolExecutor executor =  new CountingThreadPoolExecutor(threadNum,
         		threadNum, 30, TimeUnit.SECONDS,
         		new LinkedBlockingQueue<Runnable>());
-
+    	
         Iterator<SootClass> clIt = reachableClasses();
         while( clIt.hasNext() ) {
             SootClass cl = (SootClass) clIt.next();
@@ -1229,17 +1228,17 @@ public class PackManager {
                 final SootMethod m = methodIt.next();
                 if( m.isConcrete() ) {
                 	executor.execute(new Runnable() {
-
+						
 						@Override
 						public void run() {
 		                    m.retrieveActiveBody();
 						}
-
+						
 					});
                 }
             }
         }
-
+        
         // Wait till all method bodies have been loaded
         try {
         	executor.awaitCompletion();
@@ -1249,10 +1248,10 @@ public class PackManager {
 			throw new RuntimeException("Could not wait for loader threads to "
 					+ "finish: " + e.getMessage(), e);
 		}
-
+        
         // If something went wrong, we tell the world
         if (executor.getException() != null)
         	throw (RuntimeException) executor.getException();
     }
-
+    
 }

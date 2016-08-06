@@ -82,11 +82,6 @@ public class ModuliAnalysis extends ForwardFlowAnalysis<Unit,Map<Value, Moduli>>
     private void buildBeforeFilterMap(){
         
         for (Unit s : g.getBody().getUnits()) {
-            //if (!(s instanceof DefinitionStmt)) continue;
-            //Value left = ((DefinitionStmt)s).getLeftOp();
-            //if (!(left instanceof Local)) continue;
-        
-            //if (!((left.getType() instanceof IntegerType) || (left.getType() instanceof LongType))) continue;
 
             Map<Value, Moduli> map = new HashMap<Value, Moduli>();            
             for (Local l : filter.getLiveLocalsBefore(s)) {
@@ -98,15 +93,15 @@ public class ModuliAnalysis extends ForwardFlowAnalysis<Unit,Map<Value, Moduli>>
         //System.out.println("init filtBeforeMap: "+filterUnitToBeforeFlow);           
     }
 
-// STEP 4: Is the merge operator union or intersection?
+// STEP 4: Is the merge operator union 
 // 
-// merge  | bottom | even   | odd   | top
+// merge  | bottom | Num_1  | Num_2 | top
 // -------+--------+--------+-------+--------
-// bottom | bottom | even   | odd   | top
+// bottom | bottom | Num_1  | Num_2   | top
 // -------+--------+--------+-------+--------
-// even   | even   | even   | top   | top
+// Num_1  | Num_1  | Num_1  | top   | top
 // -------+--------+--------+-------+--------
-// odd    | odd    | top    | odd   | top  
+// Num_2  | Num_2  | top    | Num_2   | top  
 // -------+--------+--------+-------+--------
 // top    | top    | top    | top   | top
 //
@@ -154,16 +149,7 @@ public class ModuliAnalysis extends ForwardFlowAnalysis<Unit,Map<Value, Moduli>>
         destOut.putAll(sourceIn);
     }
    
-    // Parity Tests: 	even + even = even
-    // 			even + odd = odd 
-    // 			odd + odd = even
-    //
-    // 			even * even = even
-    // 			even * odd = even
-    // 			odd * odd = odd
-    //
-    // 			constants are tested mod 2
-    //
+    // Modulus Arithmetics 
 
     private Moduli getModuli(Map<Value, Moduli> in, Value val, int base) {
         //System.out.println("get Parity in: "+in);
@@ -174,12 +160,12 @@ public class ModuliAnalysis extends ForwardFlowAnalysis<Unit,Map<Value, Moduli>>
 	        if (resVal1.getType().equals(VALUE_TYPE.TOP) | resVal2.getType().equals(VALUE_TYPE.TOP)) {
                 return new Moduli(VALUE_TYPE.TOP,main_base);
 	        }  
-            if (resVal1.equals(VALUE_TYPE.BOTTOM) | resVal2.equals(VALUE_TYPE.BOTTOM)){
-                return new Moduli(VALUE_TYPE.BOTTOM,main_base); //TODO what should this return
+            if (resVal1.equals(VALUE_TYPE.BOTTOM) && resVal2.equals(VALUE_TYPE.BOTTOM)){
+                return new Moduli(VALUE_TYPE.BOTTOM,main_base); 
             }
             
             if ((resVal1.getBase() != resVal2.getBase())){
-            	return new Moduli(VALUE_TYPE.TOP,main_base); //TODO what should this return
+            	return new Moduli(VALUE_TYPE.TOP,main_base); 
             }
             
             if (val instanceof AddExpr){ 
