@@ -40,7 +40,7 @@
  *
  *  THOROUGH TESTING OF BUG FOUND ON 30th January
  */
-package soot.dava.toolkits.base.AST.structuredAnalysis;
+package soot.dava.toolkits.base.ast.structuredAnalysis;
 
 import java.util.ArrayList;
 import java.util.HashMap;

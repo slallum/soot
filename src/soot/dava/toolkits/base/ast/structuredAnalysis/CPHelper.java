@@ -1,4 +1,4 @@
-package soot.dava.toolkits.base.AST.structuredAnalysis;
+package soot.dava.toolkits.base.ast.structuredAnalysis;
 
 import soot.BooleanType;
 import soot.Value;

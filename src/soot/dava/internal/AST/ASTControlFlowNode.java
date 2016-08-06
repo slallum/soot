@@ -22,7 +22,7 @@ package soot.dava.internal.AST;
 
 import soot.jimple.*;
 import soot.dava.internal.SET.*;
-import soot.dava.toolkits.base.AST.*;
+import soot.dava.toolkits.base.ast.*;
 
 public abstract class ASTControlFlowNode extends ASTLabeledNode
 {

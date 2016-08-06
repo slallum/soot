@@ -1,12 +1,12 @@
-package soot.dava.toolkits.base.AST.structuredAnalysis;
+package soot.dava.toolkits.base.ast.structuredAnalysis;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 
 import soot.dava.DecompilationException;
-import soot.dava.toolkits.base.AST.structuredAnalysis.CPVariable;
-import soot.dava.toolkits.base.AST.structuredAnalysis.CPTuple;
+import soot.dava.toolkits.base.ast.structuredAnalysis.CPVariable;
+import soot.dava.toolkits.base.ast.structuredAnalysis.CPTuple;
 import soot.toolkits.scalar.FlowSet;
 
 /*

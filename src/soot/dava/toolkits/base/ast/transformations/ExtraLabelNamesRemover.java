@@ -17,9 +17,9 @@
  * Boston, MA 02111-1307, USA.
  */
 
-package soot.dava.toolkits.base.AST.transformations;
+package soot.dava.toolkits.base.ast.transformations;
 
-import soot.dava.toolkits.base.AST.analysis.*;
+import soot.dava.toolkits.base.ast.analysis.*;
 
 public class ExtraLabelNamesRemover extends DepthFirstAdapter{
 

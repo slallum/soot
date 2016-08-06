@@ -1,7 +1,7 @@
-package soot.dava.toolkits.base.AST.structuredAnalysis;
+package soot.dava.toolkits.base.ast.structuredAnalysis;
 
 import soot.dava.DavaFlowAnalysisException;
-import soot.dava.toolkits.base.AST.structuredAnalysis.CPVariable;
+import soot.dava.toolkits.base.ast.structuredAnalysis.CPVariable;
 
 /********** START LOCAL CLASS DECLARATION *******************/
 public class CPTuple{

@@ -17,7 +17,7 @@
  * Boston, MA 02111-1307, USA.
  */
 
-package soot.dava.toolkits.base.AST.transformations;
+package soot.dava.toolkits.base.ast.transformations;
 
 import java.util.Iterator;
 import java.util.List;
@@ -42,8 +42,8 @@ import soot.dava.internal.AST.ASTUnaryCondition;
 import soot.dava.internal.AST.ASTWhileNode;
 import soot.dava.internal.javaRep.DIntConstant;
 import soot.dava.internal.javaRep.DNotExpr;
-import soot.dava.toolkits.base.AST.analysis.DepthFirstAdapter;
-import soot.dava.toolkits.base.AST.traversals.ASTParentNodeFinder;
+import soot.dava.toolkits.base.ast.analysis.DepthFirstAdapter;
+import soot.dava.toolkits.base.ast.traversals.ASTParentNodeFinder;
 
 /*
  * if (true)   ---> remove conditional copy ifbody to parent

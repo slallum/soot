@@ -17,7 +17,7 @@
  * Boston, MA 02111-1307, USA.
  */
 
-package soot.dava.toolkits.base.AST.transformations;
+package soot.dava.toolkits.base.ast.transformations;
 
 import soot.*;
 import soot.dava.*;
@@ -27,9 +27,9 @@ import soot.grimp.internal.*;
 import soot.dava.internal.AST.*;
 import soot.dava.internal.asg.*;
 import soot.dava.internal.javaRep.*;
-import soot.dava.toolkits.base.AST.analysis.*;
-import soot.dava.toolkits.base.AST.traversals.*;
-import soot.dava.toolkits.base.AST.structuredAnalysis.*;
+import soot.dava.toolkits.base.ast.analysis.*;
+import soot.dava.toolkits.base.ast.traversals.*;
+import soot.dava.toolkits.base.ast.structuredAnalysis.*;
 
 import java.util.*;
 
@@ -474,8 +474,8 @@ public class FinalFieldDefinition {// extends DepthFirstAdapter{
 
 				//the def is at (GAssignStmt) defs.get(0)
 				//its parent is ASTStatementSequence and its parent is now needed
-				soot.dava.toolkits.base.AST.traversals.ASTParentNodeFinder parentFinder = 
-					new soot.dava.toolkits.base.AST.traversals.ASTParentNodeFinder();
+				soot.dava.toolkits.base.ast.traversals.ASTParentNodeFinder parentFinder = 
+					new soot.dava.toolkits.base.ast.traversals.ASTParentNodeFinder();
 				node.apply(parentFinder);
 				
 				

@@ -20,11 +20,11 @@
 /*
    Nomair A. Naeem 08-FEB-2005
    This analysis class has become obselete.
-   Use soot.dava.toolkits.base.AST.analysis which provides a Visitor Design
+   Use soot.dava.toolkits.base.ast.analysis which provides a Visitor Design
    Pattern
 */
 
-package soot.dava.toolkits.base.AST;
+package soot.dava.toolkits.base.ast;
 
 import soot.*;
 import soot.jimple.*;

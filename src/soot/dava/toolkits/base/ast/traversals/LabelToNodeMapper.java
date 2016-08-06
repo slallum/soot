@@ -17,7 +17,7 @@
  * Boston, MA 02111-1307, USA.
  */
 
-package soot.dava.toolkits.base.AST.traversals;
+package soot.dava.toolkits.base.ast.traversals;
 
 import java.util.HashMap;
 
@@ -32,7 +32,7 @@ import soot.dava.internal.AST.ASTSynchronizedBlockNode;
 import soot.dava.internal.AST.ASTTryNode;
 import soot.dava.internal.AST.ASTUnconditionalLoopNode;
 import soot.dava.internal.AST.ASTWhileNode;
-import soot.dava.toolkits.base.AST.analysis.DepthFirstAdapter;
+import soot.dava.toolkits.base.ast.analysis.DepthFirstAdapter;
 
 /*
  * For each labeled node make a mapping of the label (a string)

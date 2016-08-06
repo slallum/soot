@@ -1,4 +1,4 @@
-package soot.dava.toolkits.base.AST.transformations;
+package soot.dava.toolkits.base.ast.transformations;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,8 +13,8 @@ import soot.dava.internal.AST.ASTStatementSequenceNode;
 import soot.dava.internal.AST.ASTSwitchNode;
 import soot.dava.internal.AST.ASTTryNode;
 import soot.dava.internal.asg.AugmentedStmt;
-import soot.dava.toolkits.base.AST.analysis.DepthFirstAdapter;
-import soot.dava.toolkits.base.AST.structuredAnalysis.UnreachableCodeFinder;
+import soot.dava.toolkits.base.ast.analysis.DepthFirstAdapter;
+import soot.dava.toolkits.base.ast.structuredAnalysis.UnreachableCodeFinder;
 import soot.jimple.Stmt;
 
 
